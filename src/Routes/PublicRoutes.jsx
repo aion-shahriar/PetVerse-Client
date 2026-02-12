@@ -22,7 +22,7 @@ import Home from "../pages/HomePage/Home";
         ]
     },
     {
-        path: '/',
+        path: '/auth',
         Component: AuthLayout,
         children: [
             {
