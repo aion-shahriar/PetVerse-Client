@@ -3,6 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import useAuth from "../../hooks/useAuth"
 import Logo from "./Logo";
+import { CircleUser } from "lucide-react";
 
 const Navbar = () => {
 
@@ -19,17 +20,17 @@ const Navbar = () => {
   }
 
     const links = <>
-            <li><NavLink to ='/services'>Services</NavLink></li>
-            <li><NavLink to ='/coverage'>Coverage</NavLink></li>
-            <li><NavLink to ='/aboutUs'>About Us</NavLink></li>
-            <li><NavLink to ='/send-parcel'>Send Parcel</NavLink></li>
+            <li><NavLink to ='/'>Home</NavLink></li>
+            <li><NavLink to ='/pets-supplies'>Pets & Supplies</NavLink></li>
+            
 
-            <li><NavLink to ='/pricing'>Pricing</NavLink></li>
-            <li><NavLink to ='/rider'>Be A Rider</NavLink></li>
+            
 
             {
               user  && <>
-              <li><NavLink to ='/dashboard/my-parcels'>My Parcels</NavLink></li>
+              <li><NavLink to ='/add-listing'>Add Listing</NavLink></li>
+              <li><NavLink to ='/my-listings'>My Listings</NavLink></li>
+              <li><NavLink to ='/my-orders'>My Orders</NavLink></li>
               </>
             }
             
@@ -76,9 +77,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
-          user ? <a onClick={handleLogOut} className="btn">Log Out</a> : <Link to ='/login' className="btn">Login</Link>
+          user ? <div><a onClick={handleLogOut} className="btn">Log Out</a> <button><CircleUser /></button></div>: <div><Link to ='/auth/login' className="btn">Login</Link> <Link to='/auth/register' className="btn">Register</Link></div>
         }
-        <Link to ='/rider' className="btn btn-primary text-black mx-4">Be a rider</Link>
+        
       </div>
     </div>
   );
