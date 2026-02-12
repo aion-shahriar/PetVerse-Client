@@ -1,11 +1,23 @@
-import React from 'react'
-import Navbar from '../../components/common/Navbar'
+import Banner from "./Banner";
+import Category from "./Category";
+import PetAdopters from "./PetAdopters";
+import RecentListings from "./RecentListings";
+import WhyAdopt from "./WhyAdopt";
 
-export default function Home() {
-  return (
-    
-    <div>
-        
-    </div>
-  )
-}
+
+
+
+const Home = () => {
+    return (
+        <div>
+            <Banner></Banner>
+            <Category></Category>
+            <RecentListings></RecentListings>
+            <WhyAdopt></WhyAdopt>
+            <PetAdopters></PetAdopters>
+            
+        </div>
+    );
+};
+
+export default Home;
