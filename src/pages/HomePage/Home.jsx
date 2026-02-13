@@ -15,7 +15,6 @@ const Home = () => {
             <RecentListings></RecentListings>
             <WhyAdopt></WhyAdopt>
             <PetAdopters></PetAdopters>
-            
         </div>
     );
 };

@@ -6,6 +6,9 @@ import AuthLayout from "../layouts/AuthLayout";
 import Home from "../pages/HomePage/Home";
 import AddListing from "../pages/ListingsPage/AddListing";
 import PrivateRoute from "./PrivateRoute";
+import MyListings from "../pages/ListingsPage/MyListings";
+import MyOrders from "../pages/OrdersPage/MyOrders";
+import PetsSupplies from "../pages/PetsSuppliesPage/PetsSupplies";
 
  
  export const router = createBrowserRouter([
@@ -19,9 +22,23 @@ import PrivateRoute from "./PrivateRoute";
 
             },
             {
+                path: "pets-supplies",
+                Component: PetsSupplies
+
+            },
+            {
                 path: 'add-listing',
                 element: <PrivateRoute><AddListing></AddListing></PrivateRoute>
-            }
+            },
+            {
+                path: 'my-listings',
+                element: <PrivateRoute><MyListings></MyListings></PrivateRoute>
+            },
+            {
+                path: 'my-orders',
+                element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>
+            },
+
             
             
             

@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-import { AuthContext } from "../../context/AuthProvider";
-import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+
+
+import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 const ListingDetails = () => {
   const { id } = useParams();
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const [listing, setListing] = useState(null);
   const [showModal, setShowModal] = useState(false);
 

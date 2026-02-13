@@ -1,10 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../context/AuthProvider";
+import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
+
+import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 const MyListings = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const [listings, setListings] = useState([]);
 
   // Load only user's listings
