@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyListings from "../pages/ListingsPage/MyListings";
 import MyOrders from "../pages/OrdersPage/MyOrders";
 import PetsSupplies from "../pages/PetsSuppliesPage/PetsSupplies";
+import CategoryFilteredProducts from "../pages/HomePage/CategoryFilteredProducts";
 
  
  export const router = createBrowserRouter([
@@ -25,6 +26,10 @@ import PetsSupplies from "../pages/PetsSuppliesPage/PetsSupplies";
                 path: "pets-supplies",
                 Component: PetsSupplies
 
+            },
+            {
+                path: "/category-filtered-product/:categoryName",
+                element: <CategoryFilteredProducts />,
             },
             {
                 path: 'add-listing',

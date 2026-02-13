@@ -1,31 +1,34 @@
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-const RecentListings = () => {
-  const [listings, setListings] = useState([]);
+const CategoryFilteredProducts = () => {
+  const { categoryName } = useParams();
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://your-server-url/recent-listings")
+    fetch(
+      `https://your-server-url/listings?category=${categoryName}`
+    )
       .then((res) => res.json())
-      .then((data) => setListings(data));
-  }, []);
+      .then((data) => setProducts(data));
+  }, [categoryName]);
 
   return (
-    <div className="py-16 px-6 bg-base-100">
-      <h2 className="text-3xl font-bold text-center mb-10">
-        Recent Listings
+    <div className="max-w-7xl mx-auto py-16 px-6">
+      <h2 className="text-3xl font-bold mb-10 text-center">
+        {categoryName}
       </h2>
 
-      {listings.length === 0 ? (
+      {products.length === 0 ? (
         <p className="text-center text-gray-500">
-          No listings available.
+          No listings found.
         </p>
       ) : (
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {listings.map((item) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((item) => (
             <div
               key={item._id}
-              className="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition"
+              className="bg-white rounded-2xl shadow-md overflow-hidden"
             >
               <img
                 src={item.image}
@@ -37,10 +40,6 @@ const RecentListings = () => {
                 <h3 className="text-xl font-semibold">
                   {item.name}
                 </h3>
-
-                <p className="text-sm text-gray-500">
-                  {item.category}
-                </p>
 
                 <p className="text-sm text-gray-500">
                   📍 {item.location}
@@ -67,4 +66,4 @@ const RecentListings = () => {
   );
 };
 
-export default RecentListings;
+export default CategoryFilteredProducts;
