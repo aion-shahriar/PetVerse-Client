@@ -4,6 +4,8 @@ import Login from "../pages/AuthPage/Login";
 import Register from "../pages/AuthPage/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import Home from "../pages/HomePage/Home";
+import AddListing from "../pages/ListingsPage/AddListing";
+import PrivateRoute from "./PrivateRoute";
 
  
  export const router = createBrowserRouter([
@@ -16,6 +18,10 @@ import Home from "../pages/HomePage/Home";
                 Component: Home
 
             },
+            {
+                path: 'add-listing',
+                element: <PrivateRoute><AddListing></AddListing></PrivateRoute>
+            }
             
             
             
