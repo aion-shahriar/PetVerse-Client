@@ -37,7 +37,7 @@ const Navbar = () => {
         
     </>
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm max-w-7xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +77,28 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
-          user ? <div><a onClick={handleLogOut} className="btn">Log Out</a> <button><CircleUser /></button></div>: <div><Link to ='/auth/login' className="btn">Login</Link> <Link to='/auth/register' className="btn">Register</Link></div>
+        user ? (
+          <div className="flex items-center gap-3">
+            {user.photoURL ? (
+              <img 
+                src={user.photoURL} 
+                alt={user.displayName || "User"} 
+                className="w-10 h-10 rounded-full border-2 border-gray-300 object-cover"
+              />
+            ) : (
+              <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+                <CircleUser size={24} />
+              </button>
+            )}
+            <a onClick={handleLogOut} className="btn">Log Out</a>
+            
+          </div>
+        ) : (
+          <div>
+            <Link to='/auth/login' className="btn">Login</Link> 
+            <Link to='/auth/register' className="btn">Register</Link>
+          </div>
+        )
         }
         
       </div>

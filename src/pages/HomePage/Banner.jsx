@@ -9,7 +9,7 @@ const Banner = () => {
     return (
         
             
-            <Carousel autoPlay={true} infiniteLoop={true} className=''>
+            <Carousel autoPlay={true} infiniteLoop={true} className='max-w-7xl mx-auto mt-10'>
                 <div>
                     <img src={bannerImg1} alt="Banner 1" className='' />
                     {/* <p className="legend">Legend 1</p> */}

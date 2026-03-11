@@ -10,6 +10,8 @@ import MyListings from "../pages/ListingsPage/MyListings";
 import MyOrders from "../pages/OrdersPage/MyOrders";
 import PetsSupplies from "../pages/PetsSuppliesPage/PetsSupplies";
 import CategoryFilteredProducts from "../pages/HomePage/CategoryFilteredProducts";
+import ListingDetails from "../pages/ListingsPage/ListingDetails";
+import UpdateListing from "../pages/ListingsPage/UpdateListing";
 
  
  export const router = createBrowserRouter([
@@ -43,6 +45,14 @@ import CategoryFilteredProducts from "../pages/HomePage/CategoryFilteredProducts
                 path: 'my-orders',
                 element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>
             },
+            {
+                path: 'listing-details/:id',
+                element: <ListingDetails></ListingDetails>
+            },
+            {
+                path: 'update-listing/:id',
+                 element: <PrivateRoute><UpdateListing></UpdateListing></PrivateRoute>
+            }
 
             
             

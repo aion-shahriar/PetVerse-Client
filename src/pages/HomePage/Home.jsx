@@ -1,6 +1,6 @@
 import Banner from "./Banner";
 import Category from "./Category";
-import PetAdopters from "./PetAdopters";
+import PetHeroes from "./PetHeroes";
 import RecentListings from "./RecentListings";
 import WhyAdopt from "./WhyAdopt";
 
@@ -14,7 +14,8 @@ const Home = () => {
             <Category></Category>
             <RecentListings></RecentListings>
             <WhyAdopt></WhyAdopt>
-            <PetAdopters></PetAdopters>
+            <PetHeroes></PetHeroes>
+            
         </div>
     );
 };

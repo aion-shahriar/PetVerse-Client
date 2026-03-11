@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -8,12 +8,13 @@ import { toast } from "react-toastify";
 const MyListings = () => {
   const { user } = useAuth();
   const [listings, setListings] = useState([]);
+  const navigate = useNavigate();
 
   // Load only user's listings
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`https://your-server-url/listings?email=${user.email}`)
+    fetch(`http://localhost:3000/my-listings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setListings(data));
   }, [user]);
@@ -28,7 +29,7 @@ const MyListings = () => {
 
     try {
       const res = await fetch(
-        `https://your-server-url/listings/${id}`,
+        `http://localhost:3000/listings/${id}`,
         {
           method: "DELETE",
         }
@@ -46,6 +47,11 @@ const MyListings = () => {
     } catch (error) {
       toast.error("Delete failed!");
     }
+  };
+
+  // Update listing
+  const handleUpdate = (id) => {
+    navigate(`/update-listing/${id}`);
   };
 
   return (
@@ -103,11 +109,13 @@ const MyListings = () => {
                   {/* Actions */}
                   <td className="space-x-2">
                     {/* Update */}
-                    <Link to={`/update-listing/${item._id}`}>
-                      <button className="btn btn-sm btn-info">
+                    
+                      <button 
+                      onClick={()=> handleUpdate(item._id)}
+                      className="btn btn-sm btn-info">
                         Update
                       </button>
-                    </Link>
+                    
 
                     {/* Delete */}
                     <button

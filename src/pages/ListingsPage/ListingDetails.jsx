@@ -13,7 +13,7 @@ const ListingDetails = () => {
 
   // Fetch single listing
   useEffect(() => {
-    fetch(`https://your-server-url/listings/${id}`)
+    fetch(`http://localhost:3000/listings/${id}`)
       .then((res) => res.json())
       .then((data) => setListing(data));
   }, [id]);
@@ -41,7 +41,7 @@ const ListingDetails = () => {
 
     try {
       const res = await fetch(
-        "https://your-server-url/orders",
+        "http://localhost:3000/orders",
         {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -96,7 +96,7 @@ const ListingDetails = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="bg-primary text-white px-6 py-3 rounded-lg"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
           >
             Adopt / Order Now
           </button>
@@ -105,8 +105,8 @@ const ListingDetails = () => {
 
       {/* Modal Section */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-2xl w-full max-w-xl">
+        <div className="fixed inset-0 flex justify-center items-center z-50 p-4">
+          <div className="bg-white p-8 rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl border">
             <h3 className="text-2xl font-bold mb-6">
               Order Form
             </h3>
@@ -204,14 +204,14 @@ const ListingDetails = () => {
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2 border rounded"
+                  className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50"
                 >
                   Cancel
                 </button>
 
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-primary text-white rounded"
+                  className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
                 >
                   Confirm Order
                 </button>

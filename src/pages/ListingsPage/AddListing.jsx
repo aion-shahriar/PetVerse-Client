@@ -27,7 +27,7 @@ const AddListing = () => {
     };
 
     try {
-      const res = await fetch("https://localhost:3000/listings", {
+      const res = await fetch("http://localhost:3000/listings", {
         method: "POST",
         headers: {
           "content-type": "application/json",

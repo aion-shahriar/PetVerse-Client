@@ -9,7 +9,7 @@ const PetsSupplies = () => {
 
   // Fetch all listings
   useEffect(() => {
-    fetch("https://your-server-url/listings")
+    fetch("http://localhost:3000/listings")
       .then((res) => res.json())
       .then((data) => {
         setListings(data);
@@ -110,7 +110,7 @@ const PetsSupplies = () => {
 
                 <Link
                   to={`/listing-details/${item._id}`}
-                  className="inline-block mt-3 bg-primary text-white px-4 py-2 rounded"
+                  className="inline-block mt-3 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
                 >
                   See Details
                 </Link>

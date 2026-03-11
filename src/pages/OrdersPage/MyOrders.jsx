@@ -11,7 +11,7 @@ const MyOrders = () => {
   // Fetch only logged-in user orders
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://your-server-url/orders?email=${user.email}`)
+      fetch(`http://localhost:3000/my-orders?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }

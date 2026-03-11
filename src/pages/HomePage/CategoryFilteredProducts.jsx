@@ -7,7 +7,7 @@ const CategoryFilteredProducts = () => {
 
   useEffect(() => {
     fetch(
-      `https://your-server-url/listings?category=${categoryName}`
+      `http://localhost:3000/category/${categoryName}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
