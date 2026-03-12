@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import MDEditor from '@uiw/react-md-editor';
 
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -90,9 +90,9 @@ const ListingDetails = () => {
               : `৳ ${listing.price}`}
           </p>
 
-          <p className="text-gray-600 mb-6">
-            {listing.description}
-          </p>
+          <div className="text-gray-600 mb-6">
+            <MDEditor.Markdown source={listing.description} />
+          </div>
 
           <button
             onClick={() => setShowModal(true)}

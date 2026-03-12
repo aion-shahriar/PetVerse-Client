@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+import MDEditor from '@uiw/react-md-editor';
 
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
@@ -9,6 +10,7 @@ const AddListing = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [category, setCategory] = useState("Pets");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const AddListing = () => {
       category: form.category.value,
       price: form.category.value === "Pets" ? 0 : Number(form.price.value),
       location: form.location.value,
-      description: form.description.value,
+      description: description, // Use state value instead of form
       image: form.image.value,
       date: form.date.value,
       email: user?.email,
@@ -40,6 +42,7 @@ const AddListing = () => {
       if (data.insertedId) {
         toast.success("Listing added successfully!");
         form.reset();
+        setDescription(""); // Reset description state
         navigate("/my-listings");
       }
     } catch (error) {
@@ -125,12 +128,12 @@ const AddListing = () => {
           <label className="block font-medium mb-2">
             Description
           </label>
-          <textarea
-            name="description"
-            rows="4"
-            required
-            className="w-full border rounded-lg px-4 py-2"
-          ></textarea>
+          <MDEditor
+            value={description}
+            onChange={setDescription}
+            preview="edit"
+            height={200}
+          />
         </div>
 
         {/* Image URL */}
