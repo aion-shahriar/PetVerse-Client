@@ -5,7 +5,7 @@ const Category = () => {
 
   const categoryData = [
     { name: "Pets", label: "🐶 Pets (Adoption)" },
-    { name: "Pet Food", label: "🍖 Pet Food" },
+    { name: "Food", label: "🍖 Pet Food" },
     { name: "Accessories", label: "🧸 Accessories" },
     { name: "Care Products", label: "💊 Pet Care Products" },
   ];
