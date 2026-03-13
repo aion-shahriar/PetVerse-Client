@@ -1,33 +1,33 @@
 const petHeroes = [
   {
     id: 1,
-    name: "Sarah Ahmed",
+    name: "Hasnat Abdullah",
     role: "Dog Rescuer",
-    image: "https://i.ibb.co/7pGdC8X/person1.jpg",
+    image: "https://i.ibb.co.com/p6WFQGKB/hq720.jpg",
     story:
-      "Sarah has rescued and adopted more than 10 stray dogs and helps them find loving homes.",
+      "Hasnat has rescued and adopted more than 10 stray dogs and helps them find loving homes.",
   },
   {
     id: 2,
     name: "Tanvir Hasan",
     role: "Pet Care Volunteer",
-    image: "https://i.ibb.co/7Rk9j5Y/person2.jpg",
+    image: "https://i.ibb.co.com/rrkVf1r/resize.webp",
     story:
       "Tanvir volunteers at local shelters and provides food and medical care for abandoned pets.",
   },
   {
     id: 3,
-    name: "Nusrat Jahan",
+    name: "Aion Shahriar",
     role: "Cat Adopter",
-    image: "https://i.ibb.co/fD8zQYB/person3.jpg",
+    image: "https://i.ibb.co.com/bg0TqLzX/ai-generated-portrait-of-a-young-man-no-facial-expression-facing-the-camera-isolated-white-backgroun.jpg",
     story:
-      "Nusrat believes every pet deserves love and has adopted 3 rescued cats from PawMart.",
+      "Aion believes every pet deserves love and has adopted 3 rescued cats from PetVerse.",
   },
   {
     id: 4,
     name: "Imran Hossain",
     role: "Animal Welfare Advocate",
-    image: "https://i.ibb.co/ZGZyG5F/person4.jpg",
+    image: "https://i.ibb.co.com/F4YNfjHT/1742455238598.webp",
     story:
       "Imran spreads awareness about pet adoption and responsible pet care in his community.",
   },
@@ -35,7 +35,7 @@ const petHeroes = [
 
 const PetHeroes = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 clr1">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Title */}
@@ -54,7 +54,7 @@ const PetHeroes = () => {
           {petHeroes.map((hero) => (
             <div
               key={hero.id}
-              className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition"
+              className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition clr2"
             >
               <img
                 src={hero.image}

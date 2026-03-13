@@ -17,3 +17,27 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.clr1 {
+    background-color: rgba(255, 255, 235, 0.4);
+}
+.clr2 {
+
+    
+
+
+
+
+
+/* background: linear-gradient(135deg, #E6F7FF, #E6FFF5); */
+
+
+background: linear-gradient(135deg, rgba(110, 198, 255, 0.7), rgba(110, 231, 183, 0.7));
+
+
+
+}
+
+.clr3 {
+    background: linear-gradient(135deg, rgba(110, 198, 255, 0.2), rgba(110, 231, 183, 0.2));
+}

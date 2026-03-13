@@ -9,10 +9,10 @@ import WhyAdopt from "./WhyAdopt";
 
 const Home = () => {
     return (
-        <div>
+        <div className="clr1">
             <Banner></Banner>
             <Category></Category>
-            <RecentListings></RecentListings>
+            <RecentListings className="clr1"></RecentListings>
             <WhyAdopt></WhyAdopt>
             <PetHeroes></PetHeroes>
         </div>

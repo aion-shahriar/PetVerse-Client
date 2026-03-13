@@ -61,7 +61,7 @@ const MyOrders = () => {
       <div className="flex justify-end mb-4">
         <button
           onClick={handleDownloadPDF}
-          className="bg-primary text-white px-6 py-2 rounded-lg"
+          className=" bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
         >
           Download Report
         </button>

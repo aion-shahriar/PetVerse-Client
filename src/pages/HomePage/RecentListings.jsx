@@ -11,7 +11,7 @@ const RecentListings = () => {
   }, []);
 
   return (
-    <div className="py-16 px-6 bg-base-100 max-w-7xl mx-auto">
+    <div className="py-16 px-6 bg-base-100 max-w-7xl mx-auto clr1">
       <h2 className="text-3xl font-bold text-center mb-10">
         Recent Listings
       </h2>
@@ -54,7 +54,7 @@ const RecentListings = () => {
 
                 <Link
                   to={`/listing-details/${item._id}`}
-                  className="inline-block mt-3 bg-primary text-white px-4 py-2 rounded"
+                  className="inline-block mt-3 text-white px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded"
                 >
                   See Details
                 </Link>

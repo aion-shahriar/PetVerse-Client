@@ -58,7 +58,7 @@ const AddListing = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 bg-white shadow-lg p-8 rounded-2xl"
+        className="space-y-6 bg-white shadow-lg p-8 rounded-2xl clr3"
       >
         {/* Name */}
         <div>
@@ -133,6 +133,7 @@ const AddListing = () => {
             onChange={setDescription}
             preview="edit"
             height={200}
+            className="clr3"
           />
         </div>
 

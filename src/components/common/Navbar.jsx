@@ -37,7 +37,7 @@ const Navbar = () => {
         
     </>
   return (
-    <div className="navbar bg-base-100 shadow-sm max-w-7xl mx-auto">
+    <div className="navbar bg-base-100 shadow-sm max-w-7xl mx-auto clr2">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,13 +90,13 @@ const Navbar = () => {
                 <CircleUser size={24} />
               </button>
             )}
-            <a onClick={handleLogOut} className="btn">Log Out</a>
+            <a onClick={handleLogOut} className=" bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Log Out</a>
             
           </div>
         ) : (
           <div>
-            <Link to='/auth/login' className="btn">Login</Link> 
-            <Link to='/auth/register' className="btn">Register</Link>
+            <Link to='/auth/login' className="btn mr-3  bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Login</Link> 
+            <Link to='/auth/register' className="btn  bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Register</Link>
           </div>
         )
         }

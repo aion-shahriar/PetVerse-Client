@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 export default function RootLayout() {
   return (
-    <div className=''>
+    <div className='clr1'>
         <Navbar className="" />
         <Outlet className="" />
         <Footer />

@@ -30,7 +30,7 @@ const reasons = [
 
 const WhyAdopt = () => {
   return (
-    <section className="py-16 bg-gray-50 max-w-7xl mx-auto">
+    <section className="py-16 bg-gray-50 max-w-7xl mx-auto clr1">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold mb-6">Why Adopt from PawMart?</h2>
         <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -42,7 +42,7 @@ const WhyAdopt = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition clr2"
             >
               <div className="text-5xl mb-4">{reason.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
