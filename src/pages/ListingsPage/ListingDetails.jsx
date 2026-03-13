@@ -90,15 +90,18 @@ const ListingDetails = () => {
               : `৳ ${listing.price}`}
           </p>
 
-          <div className="text-gray-600 mb-6">
-            <MDEditor.Markdown source={listing.description} />
+          <div className="mb-6 clr1 rounded-lg" style={{backgroundColor: 'rgba(255, 255, 235, 0.4)'}}>
+            <MDEditor.Markdown 
+              source={listing.description} 
+              style={{backgroundColor: 'transparent'}}
+            />
           </div>
 
           <button
             onClick={() => setShowModal(true)}
             className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
           >
-            Adopt / Order Now
+            {listing.category === "Pets" ? "Adopt Now" : "Order Now"}
           </button>
         </div>
       </div>

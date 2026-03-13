@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link, NavLink } from "react-router";
+import { Tooltip } from 'react-tooltip';
 import useAuth from "../../hooks/useAuth"
 import Logo from "./Logo";
 import { CircleUser } from "lucide-react";
@@ -20,17 +21,17 @@ const Navbar = () => {
   }
 
     const links = <>
-            <li><NavLink to ='/'>Home</NavLink></li>
-            <li><NavLink to ='/pets-supplies'>Pets & Supplies</NavLink></li>
+            <li><NavLink to ='/' className={({isActive}) => isActive ? "text-blue-500 font-bold" : ""}>Home</NavLink></li>
+            <li><NavLink to ='/pets-supplies' className={({isActive}) => isActive ? "text-blue-500 font-bold" : ""}>Pets & Supplies</NavLink></li>
             
 
             
 
             {
               user  && <>
-              <li><NavLink to ='/add-listing'>Add Listing</NavLink></li>
-              <li><NavLink to ='/my-listings'>My Listings</NavLink></li>
-              <li><NavLink to ='/my-orders'>My Orders</NavLink></li>
+              <li><NavLink to ='/add-listing' className={({isActive}) => isActive ? "text-blue-500 font-bold" : ""}>Add Listing</NavLink></li>
+              <li><NavLink to ='/my-listings' className={({isActive}) => isActive ? "text-blue-500 font-bold" : ""}>My Listings</NavLink></li>
+              <li><NavLink to ='/my-orders' className={({isActive}) => isActive ? "text-blue-500 font-bold" : ""}>My Orders</NavLink></li>
               </>
             }
             
@@ -83,13 +84,24 @@ const Navbar = () => {
               <img 
                 src={user.photoURL} 
                 alt={user.displayName || "User"} 
-                className="w-10 h-10 rounded-full border-2 border-gray-300 object-cover"
+                className="w-10 h-10 rounded-full border-2 border-gray-300 object-cover cursor-pointer"
+                data-tooltip-id="user-tooltip"
+                data-tooltip-content={user.displayName || user.email || "User"}
               />
             ) : (
-              <button className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+              <button 
+                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center cursor-pointer"
+                data-tooltip-id="user-tooltip"
+                data-tooltip-content={user.displayName || user.email || "User"}
+              >
                 <CircleUser size={24} />
               </button>
             )}
+            <Tooltip 
+              id="user-tooltip" 
+              place="bottom" 
+              style={{ backgroundColor: '#333', color: '#fff', fontSize: '12px' }}
+            />
             <a onClick={handleLogOut} className=" bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Log Out</a>
             
           </div>

@@ -3,30 +3,40 @@ import React from "react";
 
 const reasons = [
   {
+    id: 1,
     icon: "🐶",
     title: "Give Pets a Loving Home",
     description:
       "Every rescued pet deserves a second chance. Adoption provides them a safe and loving environment.",
   },
   {
+    id: 2,
     icon: "💖",
     title: "Support Ethical Practices",
     description:
       "Adopting reduces the demand for breeders and puppy mills, promoting ethical pet care.",
   },
   {
+    id: 3,
     icon: "🌱",
     title: "Save Money & Space",
     description:
       "Adopting is often less expensive than buying, and you help reduce overpopulation in shelters.",
   },
   {
+    id: 4,
     icon: "😊",
     title: "Gain a Loyal Friend",
     description:
       "Adopted pets are incredibly grateful and form a unique, loving bond with their owners.",
   },
 ];
+const margins = {
+    1: "mt-18",   // First card
+    2: "mt-12",   // Second card
+    3: "mt-6",   // Third card
+    4: "mt-0"   // Fourth card
+  };
 
 const WhyAdopt = () => {
   return (
@@ -42,7 +52,7 @@ const WhyAdopt = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition clr2"
+              className={`bg-white p-6 rounded-lg shadow hover:shadow-lg transition clr2 ${margins[reason.id]}`}
             >
               <div className="text-5xl mb-4">{reason.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>

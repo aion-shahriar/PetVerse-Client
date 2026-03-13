@@ -32,6 +32,12 @@ const petHeroes = [
       "Imran spreads awareness about pet adoption and responsible pet care in his community.",
   },
 ];
+const margins = {
+    1: "mt-0",   // First card
+    2: "mt-6",   // Second card
+    3: "mt-12",   // Third card
+    4: "mt-18"   // Fourth card
+  };
 
 const PetHeroes = () => {
   return (
@@ -50,11 +56,11 @@ const PetHeroes = () => {
         </div>
 
         {/* Heroes Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 }`}>
           {petHeroes.map((hero) => (
             <div
               key={hero.id}
-              className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition clr2"
+              className={`bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition clr2 ${margins[hero.id]}`}
             >
               <img
                 src={hero.image}

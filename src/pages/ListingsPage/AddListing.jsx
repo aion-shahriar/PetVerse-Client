@@ -58,7 +58,7 @@ const AddListing = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 bg-white shadow-lg p-8 rounded-2xl clr3"
+        className="space-y-6  p-8 rounded-2xl"
       >
         {/* Name */}
         <div>
@@ -124,7 +124,7 @@ const AddListing = () => {
         </div>
 
         {/* Description */}
-        <div>
+        <div className="">
           <label className="block font-medium mb-2">
             Description
           </label>
@@ -133,7 +133,10 @@ const AddListing = () => {
             onChange={setDescription}
             preview="edit"
             height={200}
-            className="clr3"
+            data-color-mode="light"
+            style={{
+              backgroundColor: 'rgba(255, 255, 235, 0.4)'
+            }}
           />
         </div>
 
@@ -178,7 +181,7 @@ const AddListing = () => {
 
         <button
           type="submit"
-          className="w-full bg-primary text-white py-3 rounded-lg hover:opacity-90 transition"
+          className="w-full py-3 rounded-lg hover:opacity-90 transition  bg-blue-500 hover:bg-blue-600 text-white px-4  "
         >
           Add Listing
         </button>
