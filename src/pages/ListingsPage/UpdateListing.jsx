@@ -19,7 +19,7 @@ const UpdateListing = () => {
 
   // Fetch existing listing data
   useEffect(() => {
-    fetch(`http://localhost:3000/listings/${id}`)
+    fetch(`https://petverse-server.vercel.app/listings/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -52,7 +52,7 @@ const UpdateListing = () => {
         description: listing.description
       };
 
-      const res = await fetch(`http://localhost:3000/listings/${id}`, {
+      const res = await fetch(`https://petverse-server.vercel.app/listings/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const ListingDetails = () => {
 
   // Fetch single listing
   useEffect(() => {
-    fetch(`http://localhost:3000/listings/${id}`)
+    fetch(`https://petverse-server.vercel.app/listings/${id}`)
       .then((res) => res.json())
       .then((data) => setListing(data));
   }, [id]);
@@ -41,7 +41,7 @@ const ListingDetails = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:3000/orders",
+        "https://petverse-server.vercel.app/orders",
         {
           method: "POST",
           headers: { "content-type": "application/json" },

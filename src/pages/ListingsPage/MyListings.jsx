@@ -14,7 +14,7 @@ const MyListings = () => {
   useEffect(() => {
     if (!user?.email) return;
 
-    fetch(`http://localhost:3000/my-listings?email=${user.email}`)
+    fetch(`https://petverse-server.vercel.app/my-listings?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setListings(data));
   }, [user]);
@@ -29,7 +29,7 @@ const MyListings = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/listings/${id}`,
+        `https://petverse-server.vercel.app/listings/${id}`,
         {
           method: "DELETE",
         }

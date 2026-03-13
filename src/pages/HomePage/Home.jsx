@@ -12,7 +12,7 @@ const Home = () => {
         <div className="clr1">
             <Banner></Banner>
             <Category></Category>
-            <RecentListings className="clr1"></RecentListings>
+            <RecentListings></RecentListings>
             <WhyAdopt></WhyAdopt>
             <PetHeroes></PetHeroes>
         </div>

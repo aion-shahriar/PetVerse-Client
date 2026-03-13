@@ -1,6 +1,6 @@
 # 🐾 PetVerse - Pet Adoption & Marketplace Platform
 
-**Live Site:** [PetVerse Client](https://your-live-site-url.com)
+**Live Site:** [PetVerse Client](https://sage-medovik-cde81e.netlify.app/)
 
 PetVerse is a comprehensive pet adoption and marketplace platform that connects pet owners, adopters, and pet supply buyers in a safe and user-friendly environment. Built with modern React technologies, it provides a seamless experience for pet adoption, buying pet supplies, and managing listings.
 

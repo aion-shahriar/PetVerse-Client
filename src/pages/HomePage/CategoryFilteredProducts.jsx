@@ -7,7 +7,7 @@ const CategoryFilteredProducts = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/category/${categoryName}`
+      `https://petverse-server.vercel.app/category/${categoryName}`
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
