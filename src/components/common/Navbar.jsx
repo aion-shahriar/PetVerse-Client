@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, NavLink } from "react-router";
 import { Tooltip } from 'react-tooltip';
@@ -9,6 +9,19 @@ import { CircleUser } from "lucide-react";
 const Navbar = () => {
 
   const {user, logOut} = useAuth();
+
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || "light");
+
+  useEffect(() => {
+    const html = document.querySelector('html')
+     html.setAttribute("data-theme", theme)
+     localStorage.setItem("theme", theme)
+  }, [theme])
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark": "light")
+  }
+
 
   const handleLogOut = () => {
     logOut()
@@ -77,6 +90,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <small className="mr-1">Theme &gt; </small>
+        <input
+           onChange={(e)=> handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle mr-3"/>
         {
         user ? (
           <div className="flex items-center gap-3">
